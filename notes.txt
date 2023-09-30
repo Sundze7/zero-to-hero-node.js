@@ -1,0 +1,9 @@
+MODULES
+- They are encapsulated code (only share minimum)
+
+- every file in node by default is a MODULES
+- some powerful built-in modules in node include OS, PATH, FS, and HTTP
+
+EVENT LOOP
+- it's the core of non blocking I/O model in Node.js.
+- It allows node.js to perform non-blocking I/O operations - despite the fact that JS is single-threaded -- by offloading operations to the system kernel (multi-threaded) whenever possible
