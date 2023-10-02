@@ -7,3 +7,8 @@ MODULES
 EVENT LOOP
 - it's the core of non blocking I/O model in Node.js.
 - It allows node.js to perform non-blocking I/O operations - despite the fact that JS is single-threaded -- by offloading operations to the system kernel (multi-threaded) whenever possible
+
+STREAMS
+//streams are used to read and write sequentially
+// four types of streams are 1. writeable 2. readable 3. duplex 4. transform
+// they extend the EventEmitter class 
