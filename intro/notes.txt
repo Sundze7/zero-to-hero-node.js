@@ -11,4 +11,8 @@ EVENT LOOP
 STREAMS
 //streams are used to read and write sequentially
 // four types of streams are 1. writeable 2. readable 3. duplex 4. transform
-// they extend the EventEmitter class 
+// they extend the EventEmitter class
+
+PLANETS_PROJECT
+- in node, all streams are implemented Using EventEmitters
+- it is a great idea to stream large data sets
