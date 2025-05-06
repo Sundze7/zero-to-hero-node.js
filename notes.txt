@@ -16,3 +16,6 @@ STREAMS
 PLANETS_PROJECT
 - in node, all streams are implemented Using EventEmitters
 - it is a great idea to stream large data sets
+
+WEB SERVERS
+- An API is a software intermediary that allows communication btw 2 apps
