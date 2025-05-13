@@ -1,7 +1,8 @@
 const express = require("express");
+const path = require("path");
 
-const friendsController = require("./controllers/friends.controller");
-const messagesController = require("./controllers/messages.controller");
+const friendsRouter = require("./routes/friends.router");
+const messagesRouter = require("./routes/messages.router");
 
 const app = express();
 
@@ -10,20 +11,27 @@ app.use((req, res, next) => {
   const startTime = Date.now();
   next();
   const delta = Date.now() - startTime;
-  console.log(`${req.method} ${req.url}: this took ${delta}ms`);
+  console.log(`${req.method} ${req.baseUrl}: this took ${delta}ms`);
 });
+// app.use(helmet());
+// serve static files from /public on /site route
+app.use("/site", express.static(path.join(__dirname, "public/"))); // this static middleware is used to serve website content in a given path
+
+// CSP Middleware
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     "Content-Security-Policy",
+//     "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:;"
+//   );
+//   next();
+// });
 
 app.use(express.json()); // express build-in middleware
 
-app.post("/friends", friendsController.postFriend);
-app.get("/friends", friendsController.getAllFriends);
-app.get("/friends/:friendId", friendsController.getFriend);
-
-app.get("/messages", messagesController.getMessages);
-app.post("/messages", messagesController.postMessage);
+app.use("/friends", friendsRouter); // calling the friendsRouter to be used as a middleware
+app.use("/messages", messagesRouter);
 
 const PORT = 3000;
-
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}...`);
 });
