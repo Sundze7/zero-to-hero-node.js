@@ -3,8 +3,12 @@ const path = require("path");
 
 const friendsRouter = require("./routes/friends.router");
 const messagesRouter = require("./routes/messages.router");
+const { title } = require("process");
 
 const app = express();
+
+app.set("view engine", "hbs"); // internally loads hbs
+app.set("views", path.join(__dirname, "views")); // finds path to the folders
 
 // Middleware
 app.use((req, res, next) => {
@@ -27,6 +31,13 @@ app.use("/site", express.static(path.join(__dirname, "public/"))); // this stati
 // });
 
 app.use(express.json()); // express build-in middleware
+
+app.get("/", (req, res) => {
+  res.render("index", {
+    title: "Nature is Beautiful",
+    caption: "Let's go Hiking : (=)",
+  });
+});
 
 app.use("/friends", friendsRouter); // calling the friendsRouter to be used as a middleware
 app.use("/messages", messagesRouter);
