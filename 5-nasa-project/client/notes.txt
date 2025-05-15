@@ -1,0 +1,8 @@
+Running this Project with node v22
+
+npm install
+npm install postcss-safe-parser@latest postcss@latest
+export NODE_OPTIONS=--openssl-legacy-provider
+npm start
+
+Otherwise, you can downgrade to node v18

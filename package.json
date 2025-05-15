@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "watch": "nodemon ./4-express/server.js"
+    "watch": "nodemon ./5-nasa-project/server/server.js"
   },
   "dependencies": {
     "axios": "^1.8.4",
