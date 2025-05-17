@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node ./5-nasa-project/server/src/server.js",
     "server": "nodemon ./5-nasa-project/server/src/server.js",
-    "client": "npm run start --prefix client",
+    "client": "npm run start --prefix 5-nasa-project/client",
     "deploy": "npm run build --prefix 5-nasa-project/client && npm run start",
     "watch": "npm run server & npm run client"
   },
