@@ -5,7 +5,9 @@
     "start": "node ./5-nasa-project/server/src/server.js",
     "server": "nodemon ./5-nasa-project/server/src/server.js",
     "client": "npm run start --prefix 5-nasa-project/client",
+    "cluster": "pm2 start ./5-nasa-project/server/src/server.js -i max",
     "deploy": "npm run build --prefix 5-nasa-project/client && npm run start",
+    "deploy-cluster": "npm run build --prefix 5-nasa-project/client && npm run cluster",
     "watch": "npm run server & npm run client",
     "test-app": "npm test --prefix 5-nasa-project/server && npm test --prefix 5-nasa-project/client"
   },
@@ -17,10 +19,10 @@
     "hbs": "^4.2.0",
     "helmet": "^8.1.0",
     "lodash": "^4.17.21",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pm2": "^6.0.8"
   },
   "devDependencies": {
-    "jest": "^30.0.4",
     "supertest": "^7.1.3"
   }
 }
