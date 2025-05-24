@@ -19,3 +19,6 @@ PLANETS_PROJECT
 
 WEB SERVERS
 - An API is a software intermediary that allows communication btw 2 apps
+
+
+DB pswd cVPEYI71dpgMIBsy
